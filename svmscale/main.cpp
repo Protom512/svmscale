@@ -2,8 +2,6 @@
 
 int main(int argc,char** argv)
 {
-	char filename[CHAR_MAX]="C:\\Users\\Sou\\Google ドライブ\\ftrfile\\16全体中心半減間隔 - コピー\\test_cross_angle_Part1_tokuda.txt";
-	//readnum(filename);
 	if(strcmp(argv[1],"1")==0){
 		readftr(argv[2]);
 		calc();

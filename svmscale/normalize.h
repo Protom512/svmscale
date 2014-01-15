@@ -8,8 +8,8 @@
 int ftrnum=0;
 int fline=0;
 
-int cls[50000];
-double ftr[50000][1000];
+int cls[500000];
+double ftr[5000][10000];
 double ftravg[1024]={0};
 double ftrdis[1024]={0};
 
