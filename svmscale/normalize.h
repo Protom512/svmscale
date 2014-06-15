@@ -9,7 +9,7 @@ int ftrnum=0;
 int fline=0;
 
 int cls[500000];
-double ftr[5000][10000];
+long double ftr[500000][100];
 double ftravg[1024]={0};
 double ftrdis[1024]={0};
 
@@ -90,7 +90,7 @@ int readftr(char* filename){
 		for(int j=0; j<tmpftr;j++)
 		{
 			fscanf_s(fp,"%d:%lf ",&st,&ftr[i][j]);
-			ftr[i][j]=-log(ftr[i][j]-0.5);
+			//ftr[i][j]=-log(ftr[i][j]-0.5);
 		}
 
 	}
@@ -157,7 +157,7 @@ int scale(char* filename1,char* filename2,char *filename3)//file1:ftrfiletoconve
 	int tmpftr=ftrnum;
 	int tmp=fline;
 
-
+	fopen_s(&fout,filename3,"w");
 
 
 	for(int i=0;i<tmp;i++)
@@ -166,7 +166,10 @@ int scale(char* filename1,char* filename2,char *filename3)//file1:ftrfiletoconve
 		{
 			break;
 		}
+		if(cls[i]!=NULL){
+			printf("%d ",cls[i]);
 		fprintf(fout,"%d ",cls[i]);
+		}
 		for(int j=0; j<tmpftr;j++)
 		{
 			if(ftrdis[j]!=0){
